@@ -14,19 +14,22 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      const Hello = ({ heading, paragraph }) => (
+      const Hello = ({ heading }) => (
         <div id="heading">
           <h1> {heading} </h1>
-          <p> {paragraph} </p>
         </div>
       );
-      ReactDOM.render(
-        <Hello
-          heading="Hello World!"
-          paragraph="Hello world. But Im a paragraph."
-        />,
-        document.getElementById("root")
+
+      const TestHello = () => (
+        <div>
+          <Hello heading="Hello World!" />
+          <Hello heading="Hello World!" />
+          <Hello heading="Hello World!" />
+          <Hello heading="Hello World!" />
+        </div>
       );
+
+      ReactDOM.render(<TestHello />, document.getElementById("root"));
     </script>
   </body>
 </html>
